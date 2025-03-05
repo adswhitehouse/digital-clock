@@ -55,4 +55,82 @@ select {
 /* Body */
 body {
   font-family: "Roboto Mono", monospace;
+  background: linear-gradient(to top right, #00172d, #00498d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Container */
+.container {
+  position: relative;
+}
+
+/* Clock */
+.clock {
+  background: rgba(200, 0, 200, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  font-size: 5rem;
+  padding: 1.5rem 3rem;
+}
+
+.colon {
+  margin-top: -0.6rem;
+}
+
+.clock span {
+  position: relative;
+}
+
+.hours::after,
+.minutes::after,
+.seconds::after {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hours::after {
+  content: "HOURS";
+}
+
+.minutes::after {
+  content: "MINS";
+}
+
+.seconds::after {
+  content: "SECS";
+}
+
+/* Container Pseudo */
+.container::before {
+  content: "";
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  background-color: #fe3575;
+  left: -2rem;
+  top: -2rem;
+  z-index: -1;
+  border-radius: 0.5rem;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  background-color: #348dee;
+  border-radius: 50%;
+  bottom: -2rem;
+  right: -2rem;
+  z-index: -1;
 }
